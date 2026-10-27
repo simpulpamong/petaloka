@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Leaflet — rapikan tampilan agar menyatu dengan antarmuka                    */
+/* -------------------------------------------------------------------------- */
+
+.leaflet-container {
+  font-family: inherit;
+  background: #dbeafe;
+}
+
+.leaflet-container .leaflet-interactive:focus {
+  outline: none;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  color: #475569;
+}
+
+.leaflet-control-attribution a {
+  color: #2563eb;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgb(15 23 42 / 0.12) !important;
+}
+
+.leaflet-bar a {
+  border-bottom-color: #e8edf3 !important;
+}
+
+/* Tooltip tinggal (region name) */
+.leaflet-tooltip.map-label-tooltip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #0f172a;
+  font-size: 11px;
+  font-weight: 600;
+  text-shadow:
+    -1.5px -1.5px 0 #fff,
+    1.5px -1.5px 0 #fff,
+    -1.5px 1.5px 0 #fff,
+    1.5px 1.5px 0 #fff,
+    0 0 3px #fff;
+}
+
+.district-label-marker {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+/* Tooltip hover */
+.leaflet-tooltip.map-hover-tooltip {
+  background: #0f172a;
+  border: none;
+  border-radius: 8px;
+  color: #f8fafc;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 10px;
+  box-shadow: 0 6px 20px rgb(15 23 42 / 0.35);
+}
+
+.leaflet-tooltip.map-hover-tooltip::before {
+  display: none;
+}
+
+/* Popup */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgb(15 23 42 / 0.22);
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.leaflet-popup-content b.header {
+  font-size: 13px;
+  color: #0f172a;
+}
+
+.leaflet-container.map-crosshair {
+  cursor: crosshair !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Scrollbar halus                                                             */
+/* -------------------------------------------------------------------------- */
+
+.ui-scroll-area {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.ui-scroll-area::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.ui-scroll-area::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+.ui-scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Animasi util                                                                */
+/* -------------------------------------------------------------------------- */
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-rise {
+  animation: fade-rise 0.22s ease-out both;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tema gelap                                                                  */
+/* -------------------------------------------------------------------------- */
+
+.dark body {
+  background-color: #0b1120 !important;
+  color: #e2e8f0;
+}
+
+.dark [class~="bg-white"],
+.dark [class~="bg-white/80"],
+.dark [class~="bg-white/90"],
+.dark [class~="bg-white/95"] {
+  background-color: #111b2e !important;
+}
+
+.dark [class~="bg-slate-50"],
+.dark [class~="bg-slate-50/50"],
+.dark [class~="bg-slate-50/60"],
+.dark [class~="bg-slate-50/70"],
+.dark [class~="bg-slate-50/80"],
+.dark [class~="bg-slate-100"] {
+  background-color: #0f172a !important;
+}
+
+.dark [class~="bg-slate-200"],
+.dark [class~="bg-slate-300"] {
+  background-color: #263449 !important;
+}
+
+.dark [class~="bg-red-50/60"],
+.dark [class~="bg-red-50"] {
+  background-color: #321923 !important;
+}
+
+.dark [class~="bg-brand-50"],
+.dark [class~="bg-brand-50/70"],
+.dark [class~="bg-brand-50/80"] {
+  background-color: #142543 !important;
+}
+
+.dark [class~="from-white"] {
+  --tw-gradient-from: #0f172a var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position) !important;
+}
+
+.dark [class~="via-slate-50"] {
+  --tw-gradient-stops: var(--tw-gradient-from), #111b2e var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+.dark [class~="to-slate-100"] {
+  --tw-gradient-to: #0b1120 var(--tw-gradient-to-position) !important;
+}
+
+.dark [class~="text-slate-900"],
+.dark [class~="text-slate-800"],
+.dark [class~="text-slate-700"] {
+  color: #e2e8f0 !important;
+}
+
+.dark [class~="text-slate-600"],
+.dark [class~="text-slate-500"] {
+  color: #a8b6ca !important;
+}
+
+.dark [class~="text-slate-400"],
+.dark [class~="text-slate-300"] {
+  color: #8493a9 !important;
+}
+
+.dark [class~="text-brand-700"],
+.dark [class~="text-brand-600"] {
+  color: #93c5fd !important;
+}
+
+.dark [class~="text-red-700"],
+.dark [class~="text-red-600"] {
+  color: #fda4af !important;
+}
+
+.dark [class~="border-slate-100"],
+.dark [class~="border-slate-200"],
+.dark [class~="border-slate-300"],
+.dark [class~="border-white/70"] {
+  border-color: #27364b !important;
+}
+
+.dark [class~="border-brand-300"],
+.dark [class~="border-brand-400"] {
+  border-color: #3b82f6 !important;
+}
+
+.dark [class~="border-red-100"] {
+  border-color: #572432 !important;
+}
+
+.dark [class~="hover:bg-slate-50"]:hover,
+.dark [class~="hover:bg-slate-100"]:hover,
+.dark [class~="hover:bg-white"]:hover {
+  background-color: #1b2940 !important;
+}
+
+.dark input:not([type="checkbox"]),
+.dark textarea {
+  background-color: #0b1424;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #718096;
+}
+
+.dark .leaflet-container {
+  background: #0f172a;
+}
+
+.dark .leaflet-control-attribution {
+  background: rgb(15 23 42 / 0.88) !important;
+  color: #cbd5e1;
+}
+
+.dark .leaflet-control-attribution a {
+  color: #93c5fd;
+}
+
+.dark .leaflet-control-zoom,
+.dark .leaflet-bar a {
+  background-color: #111b2e;
+  border-color: #27364b !important;
+  color: #e2e8f0;
+}
+
+.dark .ui-scroll-area {
+  scrollbar-color: #475569 transparent;
+}
+
+.dark .modal-footer {
+  background-color: #0f172a !important;
+  border-color: #27364b !important;
+}
+
+.dark .ui-scroll-area::-webkit-scrollbar-thumb {
+  background: #475569;
+}
